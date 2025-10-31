@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footprint Collection - Storage Box's Channel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Music Player -->
+    <div class="music-player">
+        <button id="musicToggle" class="music-btn">🎵</button>
+        <audio id="bgMusic" loop>
+            <source src="music/background.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/图标.jpg" alt="Storage Box Icon" class="nav-icon">
+                <h2>Storage Box's Channel</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About This Box</a></li>
+                <li><a href="activities.html" class="nav-link active">Footprint Collection</a></li>
+                <li><a href="scenery.html" class="nav-link">Light & Shadow Memories</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-container">
+            <div class="text-content full-width">
+                <h1>Footprint Collection</h1>
+                <p class="page-intro">Click on any activity card to view all photos and details.</p>
+                
+                <!-- Activities Grid -->
+                <div class="activities-grid">
+                    <!-- 白杨汇演 -->
+                    <div class="activity-card" onclick="openActivityDetail('poplar-performance')">
+                        <div class="card-image">
+                            <img src="images/activities/白杨汇演/合照.jpg" alt="Poplar Performance">
+                        </div>
+                        <div class="card-content">
+                            <h3>Poplar Performance</h3>
+                            <p class="photo-count">2 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 大英图书馆展会 -->
+                    <div class="activity-card" onclick="openActivityDetail('british-library')">
+                        <div class="card-image">
+                            <img src="images/activities/大英图书馆展会/电话亭.jpg" alt="British Library Exhibition">
+                        </div>
+                        <div class="card-content">
+                            <h3>British Library Exhibition</h3>
+                            <p class="photo-count">5 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 电子科大舞会 -->
+                    <div class="activity-card" onclick="openActivityDetail('uestc-dance')">
+                        <div class="card-image">
+                            <img src="images/activities/电子科大舞会/九宫格.jpg" alt="UESTC Dance Party">
+                        </div>
+                        <div class="card-content">
+                            <h3>UESTC Dance Party</h3>
+                            <p class="photo-count">2 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 电子科大音乐节 -->
+                    <div class="activity-card" onclick="openActivityDetail('uestc-music')">
+                        <div class="card-image">
+                            <img src="images/activities/电子科大音乐节/合照.jpg" alt="UESTC Music Festival">
+                        </div>
+                        <div class="card-content">
+                            <h3>UESTC Music Festival</h3>
+                            <p class="photo-count">5 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 排练 -->
+                    <div class="activity-card" onclick="openActivityDetail('rehearsal')">
+                        <div class="card-image">
+                            <img src="images/activities/排练/cr.jpg" alt="Rehearsal">
+                        </div>
+                        <div class="card-content">
+                            <h3>Rehearsal</h3>
+                            <p class="photo-count">2 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 趣味运动会 -->
+                    <div class="activity-card" onclick="openActivityDetail('fun-sports')">
+                        <div class="card-image">
+                            <img src="images/activities/趣味运动会/运动会.jpg" alt="Fun Sports Day">
+                        </div>
+                        <div class="card-content">
+                            <h3>Fun Sports Day</h3>
+                            <p class="photo-count">2 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 少一天早八专属回忆 -->
+                    <div class="activity-card" onclick="openActivityDetail('one-less-8am')">
+                        <div class="card-image">
+                            <img src="images/activities/少一天早八专属回忆/宝贝们.jpg" alt="One Less 8AM Memory">
+                        </div>
+                        <div class="card-content">
+                            <h3>One Less 8AM Memory</h3>
+                            <p class="photo-count">4 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 圣诞节 -->
+                    <div class="activity-card" onclick="openActivityDetail('christmas')">
+                        <div class="card-image">
+                            <img src="images/activities/圣诞节/绘画.jpg" alt="Christmas">
+                        </div>
+                        <div class="card-content">
+                            <h3>Christmas</h3>
+                            <p class="photo-count">1 photo</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 世界线漫展 -->
+                    <div class="activity-card" onclick="openActivityDetail('worldline-comic')">
+                        <div class="card-image">
+                            <img src="images/activities/世界线漫展/CC.jpg" alt="Worldline Comic Con">
+                        </div>
+                        <div class="card-content">
+                            <h3>Worldline Comic Con</h3>
+                            <p class="photo-count">4 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 万圣节 -->
+                    <div class="activity-card" onclick="openActivityDetail('halloween')">
+                        <div class="card-image">
+                            <img src="images/activities/万圣节/双人舞.jpg" alt="Halloween">
+                        </div>
+                        <div class="card-content">
+                            <h3>Halloween</h3>
+                            <p class="photo-count">2 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 暹罗猫 -->
+                    <div class="activity-card" onclick="openActivityDetail('siamese-cat')">
+                        <div class="card-image">
+                            <img src="images/activities/暹罗猫/第一次美甲.jpg" alt="Siamese Cat">
+                        </div>
+                        <div class="card-content">
+                            <h3>Siamese Cat</h3>
+                            <p class="photo-count">3 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 一二九合唱 -->
+                    <div class="activity-card" onclick="openActivityDetail('129-choir')">
+                        <div class="card-image">
+                            <img src="images/activities/一二九合唱/自拍.jpg" alt="129 Choir">
+                        </div>
+                        <div class="card-content">
+                            <h3>129 Choir</h3>
+                            <p class="photo-count">2 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 优秀新生 -->
+                    <div class="activity-card" onclick="openActivityDetail('excellent-freshman')">
+                        <div class="card-image">
+                            <img src="images/activities/优秀新生/奖学金.jpg" alt="Excellent Freshman">
+                        </div>
+                        <div class="card-content">
+                            <h3>Excellent Freshman</h3>
+                            <p class="photo-count">1 photo</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+
+                    <!-- 中传音乐节 -->
+                    <div class="activity-card" onclick="openActivityDetail('cuc-music')">
+                        <div class="card-image">
+                            <img src="images/activities/中传音乐节/toxic.jpg" alt="CUC Music Festival">
+                        </div>
+                        <div class="card-content">
+                            <h3>CUC Music Festival</h3>
+                            <p class="photo-count">8 photos</p>
+                            <span class="card-date">2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Activity Detail Modal -->
+    <div id="activityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalContent">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Storage Box's Channel. All memories, carefully stored.</p>
+        </div>
+    </footer>
+
+    <script src="js/activities.js"></script>
+</body>
+</html>

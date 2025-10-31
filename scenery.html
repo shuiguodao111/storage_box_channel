@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light & Shadow Memories - Storage Box's Channel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Music Player -->
+    <div class="music-player">
+        <button id="musicToggle" class="music-btn">🎵</button>
+        <audio id="bgMusic" loop>
+            <source src="music/background.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/图标.jpg" alt="Storage Box Icon" class="nav-icon">
+                <h2>Storage Box's Channel</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About This Box</a></li>
+                <li><a href="activities.html" class="nav-link">Footprint Collection</a></li>
+                <li><a href="scenery.html" class="nav-link active">Light & Shadow Memories</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-container">
+            <div class="text-content full-width">
+                <h1>Light & Shadow Memories</h1>
+                <p class="page-intro">Captured moments of beautiful scenery that have touched my heart. Click on any scenery card to view all photos.</p>
+                
+                <!-- Scenery Grid -->
+                <div class="scenery-grid">
+                    <!-- 北海公园 -->
+                    <div class="scenery-card" onclick="openSceneryDetail('beihai-park')">
+                        <div class="card-image">
+                            <img src="images/scenery/北海公园/垂柳.jpg" alt="Beihai Park">
+                        </div>
+                        <div class="card-content">
+                            <h3>Beihai Park</h3>
+                            <p class="photo-count">4 photos</p>
+                            <span class="card-date">2024</span>
+                        </div>
+                    </div>
+
+                    <!-- 呆呆岛 -->
+                    <div class="scenery-card" onclick="openSceneryDetail('daidai-island')">
+                        <div class="card-image">
+                            <img src="images/scenery/呆呆岛/粉红车.jpg" alt="Daidai Island">
+                        </div>
+                        <div class="card-content">
+                            <h3>Daidai Island</h3>
+                            <p class="photo-count">2 photos</p>
+                            <span class="card-date">2024</span>
+                        </div>
+                    </div>
+
+                    <!-- 德福巷和书院门 -->
+                    <div class="scenery-card" onclick="openSceneryDetail('defu-alley')">
+                        <div class="card-image">
+                            <img src="images/scenery/德福巷和书院门/biangbiang面.jpg" alt="Defu Alley & Shuyuanmen">
+                        </div>
+                        <div class="card-content">
+                            <h3>Defu Alley & Shuyuanmen</h3>
+                            <p class="photo-count">5 photos</p>
+                            <span class="card-date">2024</span>
+                        </div>
+                    </div>
+
+                    <!-- 环球影城 -->
+                    <div class="scenery-card" onclick="openSceneryDetail('universal-studios')">
+                        <div class="card-image">
+                            <img src="images/scenery/环球影城/大地球.jpg" alt="Universal Studios">
+                        </div>
+                        <div class="card-content">
+                            <h3>Universal Studios</h3>
+                            <p class="photo-count">4 photos</p>
+                            <span class="card-date">2024</span>
+                        </div>
+                    </div>
+
+                    <!-- 陵水 -->
+                    <div class="scenery-card" onclick="openSceneryDetail('lingshui')">
+                        <div class="card-image">
+                            <img src="images/scenery/陵水/氛围感女头.jpg" alt="Lingshui">
+                        </div>
+                        <div class="card-content">
+                            <h3>Lingshui</h3>
+                            <p class="photo-count">2 photos</p>
+                            <span class="card-date">2024</span>
+                        </div>
+                    </div>
+
+                    <!-- 天坛 -->
+                    <div class="scenery-card" onclick="openSceneryDetail('temple-of-heaven')">
+                        <div class="card-image">
+                            <img src="images/scenery/天坛/皇帝旗.jpg" alt="Temple of Heaven">
+                        </div>
+                        <div class="card-content">
+                            <h3>Temple of Heaven</h3>
+                            <p class="photo-count">3 photos</p>
+                            <span class="card-date">2024</span>
+                        </div>
+                    </div>
+
+                    <!-- 小雁塔 -->
+                    <div class="scenery-card" onclick="openSceneryDetail('small-wild-goose-pagoda')">
+                        <div class="card-image">
+                            <img src="images/scenery/小雁塔/兜率.jpg" alt="Small Wild Goose Pagoda">
+                        </div>
+                        <div class="card-content">
+                            <h3>Small Wild Goose Pagoda</h3>
+                            <p class="photo-count">3 photos</p>
+                            <span class="card-date">2024</span>
+                        </div>
+                    </div>
+
+                    <!-- 杨梅竹斜街 -->
+                    <div class="scenery-card" onclick="openSceneryDetail('yangmeizhu-street')">
+                        <div class="card-image">
+                            <img src="images/scenery/杨梅竹斜街/吹糖人.jpg" alt="Yangmeizhu Street">
+                        </div>
+                        <div class="card-content">
+                            <h3>Yangmeizhu Street</h3>
+                            <p class="photo-count">2 photos</p>
+                            <span class="card-date">2024</span>
+                        </div>
+                    </div>
+
+                    <!-- 中柳巷 -->
+                    <div class="scenery-card" onclick="openSceneryDetail('zhongliu-alley')">
+                        <div class="card-image">
+                            <img src="images/scenery/中柳巷/扶眼镜.jpg" alt="Zhongliu Alley">
+                        </div>
+                        <div class="card-content">
+                            <h3>Zhongliu Alley</h3>
+                            <p class="photo-count">3 photos</p>
+                            <span class="card-date">2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scenery Detail Modal -->
+    <div id="sceneryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="sceneryModalContent">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Storage Box's Channel. All memories, carefully stored.</p>
+        </div>
+    </footer>
+
+    <script src="js/scenery.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>     

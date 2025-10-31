@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Box's Channel - Welcome</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+// 文件结构检查
+function checkFileStructure() {
+    const requiredFiles = [
+        'images/home-main.jpg',
+        'css/style.css',
+        'js/script.js',
+        'js/activities.js'
+    ];
+    
+    let missingFiles = [];
+    
+    requiredFiles.forEach(file => {
+        // 尝试通过创建Image对象来检查图片文件
+        if (file.startsWith('images/')) {
+            const img = new Image();
+            img.onerror = () => missingFiles.push(file);
+            img.src = file;
+        }
+    });
+    
+    // 延迟检查结果
+    setTimeout(() => {
+        if (missingFiles.length > 0) {
+            console.warn('缺失的文件:', missingFiles);
+            alert('以下文件可能缺失：\n' + missingFiles.join('\n'));
+        } else {
+            console.log('✅ 所有必需文件都存在');
+        }
+    }, 1000);
+}
+
+// 页面加载后检查文件结构
+window.addEventListener('load', checkFileStructure);
+</script>
+</head>
+<body>
+    <!-- Music Player -->
+    <div class="music-player">
+        <button id="musicToggle" class="music-btn">🎵</button>
+        <audio id="bgMusic" loop>
+            <source src="music/background.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/图标.jpg" alt="Storage Box Icon" class="nav-icon">
+                <h2>Storage Box's Channel</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About This Box</a></li>
+                <li><a href="activities.html" class="nav-link">Footprint Collection</a></li>
+                <li><a href="scenery.html" class="nav-link">Light & Shadow Memories</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="content-container">
+            <!-- Left Text Content -->
+            <div class="text-content">
+                <h1>Welcome to Storage Box's Channel</h1>
+                <p>This is where I treasure every precious moment, recording my growth journey and beautiful memories.</p>
+                <p>Open this digital storage box and revisit those warm times with me.</p>
+                
+                <div class="action-buttons">
+                    <button class="main-btn" onclick="location.href='activities.html'">Explore My Journey</button>
+                    <button class="secondary-btn" onclick="location.href='scenery.html'">Browse Memories</button>
+                </div>
+            </div>
+            
+            <!-- Right Image Area -->
+            <div class="image-content">
+                <img src="images/home-main.jpg" alt="My favorite memory" class="home-image">
+            </div>
+        </div>
+    </main>
+
+    
+<script>
+// 详细的图片加载调试
+document.addEventListener('DOMContentLoaded', function() {
+    var img = document.querySelector('.home-image');
+    
+    console.log('图片路径:', img.src);
+    console.log('图片完整URL:', img.currentSrc || img.src);
+    
+    // 检查图片状态
+    if (img.complete) {
+        if (img.naturalWidth === 0) {
+            console.error('❌ 图片已加载但尺寸为0，可能路径错误');
+            showImageError('图片路径错误，请检查 images/home-main.jpg 是否存在');
+        } else {
+            console.log('✅ 图片已加载成功，尺寸:', img.naturalWidth + 'x' + img.naturalHeight);
+        }
+    } else {
+        console.log('⏳ 图片正在加载...');
+        
+        img.onload = function() {
+            console.log('✅ 图片加载完成，尺寸:', this.naturalWidth + 'x' + this.naturalHeight);
+            hideImageError();
+        };
+        
+        img.onerror = function() {
+            console.error('❌ 图片加载失败，路径:', this.src);
+            showImageError('图片加载失败！路径: ' + this.src);
+        };
+        
+        // 5秒超时检查
+        setTimeout(function() {
+            if (!img.complete) {
+                console.warn('⚠️ 图片加载超时');
+                showImageError('图片加载超时，可能文件过大或路径错误');
+            }
+        }, 5000);
+    }
+    
+    function showImageError(message) {
+        // 创建错误提示
+        var errorDiv = document.createElement('div');
+        errorDiv.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,0,0,0.9);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 10000;
+            text-align: center;
+            max-width: 80%;
+        `;
+        errorDiv.innerHTML = `
+            <h3>🚨 图片加载问题</h3>
+            <p>${message}</p>
+            <p>请检查：</p>
+            <ul style="text-align: left; margin: 10px 0;">
+                <li>images 文件夹是否存在</li>
+                <li>home-main.jpg 文件是否存在</li>
+                <li>文件名是否正确（包括扩展名）</li>
+            </ul>
+            <button onclick="this.parentElement.remove()" style="padding: 5px 10px; margin-top: 10px;">关闭</button>
+        `;
+        document.body.appendChild(errorDiv);
+    }
+    
+    function hideImageError() {
+        var errorDiv = document.querySelector('div[style*="background: rgba(255,0,0,0.9)"]');
+        if (errorDiv) errorDiv.remove();
+    }
+});
+</script>
+
+
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Storage Box's Channel. All memories, carefully stored.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

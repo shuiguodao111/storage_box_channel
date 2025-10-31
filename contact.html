@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Storage Box's Channel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Music Player -->
+    <div class="music-player">
+        <button id="musicToggle" class="music-btn">🎵</button>
+        <audio id="bgMusic" loop>
+            <source src="music/background.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/图标.jpg" alt="Storage Box Icon" class="nav-icon">
+                <h2>Storage Box's Channel</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About This Box</a></li>
+                <li><a href="activities.html" class="nav-link">Footprint Collection</a></li>
+                <li><a href="scenery.html" class="nav-link">Light & Shadow Memories</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-container">
+            <div class="text-content full-width">
+                <h1>Contact Me</h1>
+                <p class="page-intro">I'd love to hear from you! Whether you want to share your own memories, ask about mine, or just say hello - feel free to reach out through any of these channels.</p>
+                
+                <div class="contact-container">
+                    <!-- 联系信息 -->
+                    <div class="contact-info">
+                        <h2>Get In Touch</h2>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>shuiguodao@gmail.com</p>
+                                <small>I usually reply within 24 hours</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h3>Social Media</h3>
+                                <p>Douyin: chui0403</p>
+                                <p>WeChat: cui060403</p>
+                                <small>Feel free to follow my daily updates</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h3>Location</h3>
+                                <p>Hainan, China</p>
+                                <small>The tropical paradise of China</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">💭</div>
+                            <div class="contact-details">
+                                <h3>Quick Response</h3>
+                                <p>Preferred Contact: WeChat</p>
+                                <small>Fastest way to get in touch with me</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 联系表单 -->
+                    <div class="contact-form">
+                        <h2>Send a Message</h2>
+                        <p class="form-intro">Prefer to send a message directly? Fill out the form below and I'll get back to you as soon as possible!</p>
+                        
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Your Email *</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="What is this regarding?">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Share your thoughts, questions, or memories..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="main-btn">Send Message</button>
+                            <p class="form-note">* Required fields</p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Additional Contact Section -->
+                <div class="contact-extra">
+                    <h2>Other Ways to Connect</h2>
+                    <div class="extra-options">
+                        <div class="extra-item">
+                            <h3>📝 Share Your Memories</h3>
+                            <p>Have your own special memories you'd like to share? I'd love to hear about them!</p>
+                        </div>
+                        <div class="extra-item">
+                            <h3>🤝 Collaboration</h3>
+                            <p>Interested in collaborating on photography or memory projects? Let's create something beautiful together!</p>
+                        </div>
+                        <div class="extra-item">
+                            <h3>💬 Feedback</h3>
+                            <p>Have suggestions for this website? Your feedback helps me improve this digital memory box.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Storage Box's Channel. All memories, carefully stored.</p>
+            <p class="footer-contact">Reach me at: shuiguodao@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="js/contact.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
