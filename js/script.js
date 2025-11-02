@@ -1,30 +1,94 @@
-// Music Player Functionality
+// 改进的音乐播放功能 - 专注于状态恢复
 document.addEventListener('DOMContentLoaded', function() {
     const musicToggle = document.getElementById('musicToggle');
     const bgMusic = document.getElementById('bgMusic');
 
-    // Ensure elements exist before adding event listeners
     if (musicToggle && bgMusic) {
-        // Ensure music only plays after user interaction
-        document.addEventListener('click', function() {
-            bgMusic.volume = 0.3; // Set volume
-        }, { once: true });
+        console.log('音乐播放器初始化...');
+        
+        // 设置音量
+        bgMusic.volume = 0.3;
+        
+        // 检查之前的播放状态
+        const wasPlaying = localStorage.getItem('musicPlaying') === 'true';
+        const savedTime = localStorage.getItem('musicTime');
+        
+        console.log('之前的状态:', { wasPlaying, savedTime });
+        
+        if (wasPlaying) {
+            // 设置为播放状态
+            musicToggle.textContent = '🎵';
+            musicToggle.classList.add('playing');
+            
+            // 恢复播放位置
+            if (savedTime) {
+                bgMusic.currentTime = parseFloat(savedTime);
+            }
+            
+            // 尝试自动播放（但浏览器可能阻止）
+            const playPromise = bgMusic.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log('自动播放被阻止，需要用户交互');
+                    // 显示提示让用户知道需要点击
+                    musicToggle.style.animation = 'pulse 1s infinite';
+                });
+            }
+        } else {
+            musicToggle.textContent = '🔇';
+            musicToggle.classList.remove('playing');
+        }
 
+        // 点击播放/暂停
         musicToggle.addEventListener('click', function() {
             if (bgMusic.paused) {
-                bgMusic.play().catch(error => {
-                    console.log('Audio play failed:', error);
+                bgMusic.play().then(() => {
+                    console.log('音乐开始播放');
+                    musicToggle.textContent = '🎵';
+                    musicToggle.classList.add('playing');
+                    localStorage.setItem('musicPlaying', 'true');
+                    musicToggle.style.animation = ''; // 移除动画
+                }).catch(error => {
+                    console.error('播放失败:', error);
                 });
-                musicToggle.classList.add('playing');
-                musicToggle.textContent = '🎵';
             } else {
                 bgMusic.pause();
-                musicToggle.classList.remove('playing');
                 musicToggle.textContent = '🔇';
+                musicToggle.classList.remove('playing');
+                localStorage.setItem('musicPlaying', 'false');
             }
         });
-    }
 
+        // 定期保存播放时间
+        setInterval(() => {
+            if (!bgMusic.paused) {
+                localStorage.setItem('musicTime', bgMusic.currentTime);
+            }
+        }, 3000);
+
+        // 页面关闭前保存状态
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('musicTime', bgMusic.currentTime);
+            if (!bgMusic.paused) {
+                localStorage.setItem('musicPlaying', 'true');
+            }
+        });
+        
+    } else {
+        console.error('找不到音乐元素');
+    }
+});
+
+// 添加脉冲动画提示
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+`;
+document.head.appendChild(style);
     // Simple page load effects for homepage only
     const currentPage = window.location.pathname.split('/').pop();
     if (currentPage === 'index.html' || currentPage === '' || currentPage === '/') {
@@ -74,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     console.log('Storage Box Channel loaded successfully!');
-});
+
 
 // Smooth scrolling for anchor links (if any)
 document.addEventListener('DOMContentLoaded', function() {

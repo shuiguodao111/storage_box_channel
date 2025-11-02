@@ -1,3 +1,11 @@
+// 确保音乐播放器正常工作
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Activities page music check:', {
+        musicToggle: document.getElementById('musicToggle'),
+        bgMusic: document.getElementById('bgMusic'),
+        musicState: localStorage.getItem('musicPlaying')
+    });
+});
 // Activity data - mapping activity IDs to their details
 const activities = {
     'poplar-performance': {

@@ -45,7 +45,7 @@ window.addEventListener('load', checkFileStructure);
     <!-- Music Player -->
     <div class="music-player">
         <button id="musicToggle" class="music-btn">🎵</button>
-        <audio id="bgMusic" loop>
+        <audio id="bgMusic" loop preload="metadata">
             <source src="music/Ditto.flac" type="audio/flac">
             Your browser does not support the audio element.
         </audio>

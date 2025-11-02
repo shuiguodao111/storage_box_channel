@@ -317,10 +317,19 @@ body {
     .nav-logo h2 {
         font-size: 1.4rem;
     }
-     .home-page .main-content {
-        margin: 10px auto;
-        padding: 15px;
-        min-height: auto; /* 移动端自动高度 */
+    /* 调整主页透明框为更透明的效果 */
+    .home-page .main-content {
+        background-color: rgba(255, 248, 240, 0.3);
+        backdrop-filter: blur(8px); /* 增加模糊效果让背景更柔和 */
+        border-radius: 12px;
+        margin: 15px auto;
+        padding: 20px;
+        max-width: 96%;
+        display: flex;
+        align-items: center;
+        min-height: 55vh;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2); /* 添加轻微边框增强层次感 */
     }
     
     .home-page .content-container {
