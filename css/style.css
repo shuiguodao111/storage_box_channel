@@ -23,6 +23,39 @@ body {
     flex-direction: column;
 }
 
+.home-page {
+    background-image: url('../images/背景图片.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* 调整主页内容容器 */
+.home-page .content-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center; /* 确保垂直居中 */
+    min-height: 40vh; /* 进一步减小高度 */
+    padding: 20px 0; /* 添加上下内边距 */
+}
+
+/* 调整主内容区域 */
+.home-page .main-content {
+    background-color: rgba(255, 248, 240, 0.9);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px auto; /* 减少外边距 */
+    padding: 25px; /* 减少内边距 */
+    max-width: 95%;
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    min-height: 50vh; /* 设置合适的最小高度 */
+}
+
 /* Music Player */
 .music-player {
     position: fixed;
@@ -70,7 +103,8 @@ body {
 
 .nav-logo h2 {
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
 .nav-menu {
@@ -85,6 +119,8 @@ body {
     padding: 10px 0;
     position: relative;
     transition: color 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: 500; 
 }
 
 .nav-link:hover, .nav-link.active {
@@ -176,6 +212,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .image-placeholder {
@@ -256,6 +293,9 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-link {
+        font-size: 1.1rem; 
+    }
     .content-container {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -264,12 +304,6 @@ body {
     
     .text-content h1 {
         font-size: 2rem;
-    }
-    
-    .action-buttons {
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
     }
     
     .main-btn, .secondary-btn {
@@ -281,7 +315,29 @@ body {
     }
     
     .nav-logo h2 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+    }
+     .home-page .main-content {
+        margin: 10px auto;
+        padding: 15px;
+        min-height: auto; /* 移动端自动高度 */
+    }
+    
+    .home-page .content-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 5px;
+    }
+    
+    .home-page .text-content h1 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+    
+    .action-buttons {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -854,10 +910,10 @@ body {
 }
 
 .home-image {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     border-radius: 10px;
-    border: 3px solid #4CAF50; /* 添加边框便于调试 */
+    border: 3px solid #af4ca0; /* 添加边框便于调试 */
     background: linear-gradient(45deg, #f8f9fa 25%, #e9ecef 50%, #f8f9fa 75%);
     background-size: 200% 200%;
     animation: shimmer 2s infinite;
